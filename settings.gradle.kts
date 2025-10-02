@@ -20,4 +20,4 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "C1B7P1_Demo"
-include(":app")
+include(":app", ":server")

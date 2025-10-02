@@ -1,0 +1,15 @@
+server:
+  port: 8087
+
+spring:
+  servlet:
+    multipart:
+      max-file-size: 512MB
+      max-request-size: 512MB
+  web:
+    resources:
+      static-locations: [ "file:uploads/" ]
+
+app:
+  upload-dir: uploads
+  allow-origins: "http://10.0.2.2:8087,http://localhost:8087,*"

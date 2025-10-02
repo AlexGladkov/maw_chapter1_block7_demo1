@@ -12,6 +12,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import tech.mobiledeveloper.c1b7p1_demo.ui.theme.C1B7P1_DemoTheme
+import tech.mobiledeveloper.c1b7p1_demo.upload.UploadScreen
+import tech.mobiledeveloper.c1b7p1_demo.upload.UploadViewModel
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,29 +21,9 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             C1B7P1_DemoTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
+                val vm = UploadViewModel(application)
+                UploadScreen(viewModel = vm)
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    C1B7P1_DemoTheme {
-        Greeting("Android")
     }
 }
